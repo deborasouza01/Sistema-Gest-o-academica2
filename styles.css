@@ -1,0 +1,92 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /*fonte*/
+    background-color: rgba(0, 162, 255, 0.395); /* Cor de fundo */
+    display: flex; /* alinhar os itens */
+    justify-content: flex-start; /* por o login p esquerda esquerda */
+    align-items: center; /* Centraliza verticalmente */
+    padding-left: 50px; /* Dá um espacinho na esquerda */
+}
+
+/* Container principal que segura todo o conteúdo */
+.container {
+    display: flex; /* Usando flexbox */
+    width: 50%; /* Ocupa metade da largura da tela */
+    max-width: 600px; /* Máximo de largura */
+    background-color:#fff; /* Fundo branco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra levinha ao redor */
+    flex-direction: column; /* Elementos dentro ficam em coluna */
+    padding: 10px; /* Espaço interno */
+    border-radius: 20px;
+}
+
+/* Estiliza a div que segura a logo */
+.logo {
+    display: flex; /* Usando flexbox */
+    justify-content: center; /* Centraliza a logo horizontalmente */
+    margin-bottom: 20px; /* Espaço abaixo da logo */
+    margin-top: 20px; /* Espaço acima da logo */
+}
+
+/* Configura o tamanho da imagem da logo */
+.logo img {
+    width: 400px; /* Largura da logo */
+}
+
+/* Container para os formulários */
+.form-container {
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+/* Cada box de formulário "japossuicadastro/nao possue cadastro */
+.form-box {
+    margin-bottom: 30px; /* Espaço abaixo de cada box */
+     
+}
+
+/* Estilo dos títulos (Já possui cadastro? e Não possui cadastro?) */
+h2 {
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    color: #333; /* Cor do texto, cinza escuro */
+}
+
+/* Estilo dos formulários */
+form {
+    display: flex; /* Usando flexbox */
+    flex-direction: column; /* Campos em coluna */
+}
+
+/* Estilo das labels */
+label {
+    margin-bottom: 5px; /* Espaço abaixo da label */
+    color: #555; /* Cor do texto, cinza médio */
+}
+
+/* Estilo dos inputs e selects */
+input, select {
+    margin-bottom: 10px; /* Espaço abaixo dos campos */
+    padding: 10px; /* Espaço interno dos campos */
+    border: 1px solid #ddd; /* Borda cinza clarinha */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilo dos botões */
+button {
+    width: 150px;
+    padding: 10px; /* Espaço interno */
+    background-color: #333; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de mãozinha */
+    margin: 0 auto;
+}
+
+/* Estilo do botão ao passar o mouse por cima */
+button:hover {
+    background-color: #555; /* Fundo fica um pouco mais claro */
+}
+a{
+    text-align: center;
+    font-size: 15px;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Responsável</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e6f1fa;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card-custom {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+            width: 30%;
+           
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        #data-frequencia {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #calendario{
+            width: 40%;
+            margin: 0 auto;
+        }
+        h3{
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header><!--Titulo/TOPO-->
+        <h1>Área do Responsável</h1>
+        <!--Logo-->
+       <nav><!--ABRE NAV-->
+            <ul>
+                <li><a href="#frequencia">Frequência</a></li>
+                <li><a href="#calendario">Calendário</a></li>
+                <li><a href="#notas">Notas</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#upload">Documentos</a></li>
+            </ul>
+
+        </nav><!--FECHOU NAV-->
+    </header>
+
+    <div class="container mt-5"> <!--ABRIU DIV 1-->
+        <!-- mostrar frequência -->
+        <div id="frequencia"><!--ABRIU DIV 2-->
+            <h3 class="mb-4">Frequência dos Aluno</h3>
+            <form class="mb-4"><!--ABRIU FORM-->
+
+                <div class="form-group"><!--ABRIU DIV 3-->
+                    <label for="data-frequencia">Buscar por Data:</label>
+                    <input type="date" class="form-control" id="data-frequencia" placeholder="Selecione uma data">
+                </div><!--FECHOU DIV -->
+                <button type="button" class="btn btn-custom">Buscar</button><!--BOTAO BUSCAR FREQUENCIA-->
+            </form><!--FECHOU FORM-->
+
+<!--ABRIU PRIM DIV--><div class="card p-4 mb-4">
+<!--ABRIU SEG DIV--><div class="text-center"><!--TEXTO "DADOS DO ALUNO" NO CENTRO -->
+                    <h4>Dados do aluno</h4>
+                    <p><strong>Nome do Aluno:</strong><span id="nome-aluno-frequencia">João da Silva Campos</span></p>
+                    <p><strong>Série:</strong> <span id="serie-frequencia">5ª Ano</span></p>
+                    <p><strong>Turma:</strong> <span id="turma-frequencia">Turma B</span></p>
+                    <p><strong>Turno:</strong> <span id="turno-frequencia">Manhã</span></p>
+                    
+                    <h6>Portador de necessidades especiais?</h6>
+            <!--CAMPO PORTADOR DE NECESSIDADS ESPECIAIS SIM/NÃO-->        
+            <label><input type="radio" name="genero" value="Masculino">Sim</label>
+            <label><input type="radio" name="genero" value="nao">Não</label>
+
+           </div><!--FECHOU SEG DIV-->
+          </div><!--FECHOU PRIM DIV-->
+        
+        <!-- campo de notas -->
+        <div id="notas" class="mt-5">
+            <h3 class="mb-4">Notas Bimestrais</h3>
+            <div class="card p-4 mb-4">
+                <div class="text-center"><!--Texto "Nome do Aluno" no CENTRO-->
+                    <p><strong>Nome do Aluno:</strong> <span id="nome-aluno-notas">Maria Oliveira</span></p>
+                    <div id="disciplinas">
+                       <!-- BLOCAO disciplina-->
+                        <div class="mb-3">
+                            <h5>Matemática</h5>
+                            <p><strong>1º Bimestre:</strong> <span id="nota1-notas">8.5</span></p>
+                            <p><strong>2º Bimestre:</strong> <span id="nota2-notas">7.0</span></p>
+                            <p><strong>3º Bimestre:</strong> <span id="nota3-notas">9.0</span></p>
+                            <p><strong>4º Bimestre:</strong> <span id="nota4-notas">6.5</span></p>
+                            <p><strong>Média:</strong> <span id="media-notas">7.5</span></p>
+                            <p><strong>Status:</strong> <span id="status-notas">Aprovado</span></p>
+                            <button class="btn btn-custom" onclick="calcularNotas()">Calcular</button><!--BOTÃO CALCULAR NOTAS-->
+                        </div>
+                       <!-- acabou campo de disciplina -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- campo eventos -->
+        <div id="eventos" class="mt-5"><!--evento 1-->
+            <h3 class="mb-4">Eventos Recentes e Futuros</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="../pag.Responsável/imgs/linguagens.jpg" class="card-img-top" alt="Oficina de linguagens estrangeiras">
+                        <div class="card-body">
+                            <h5 class="card-title">Explorando Culturas: Oficina de Línguas Estrangeiras</h5>
+                            <p class="card-text">Descrição sobre o evento...</p>
+                            <a href="#" class="btn btn-primary">Mais detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4"><!--evento 2-->
+                    <div class="card">
+                        <img src="../pag.Responsável/imgs/maos.jpg" class="card-img-top" alt="Palestra sobre construir um futuro igualitario">
+                        <div class="card-body">
+                            <h5 class="card-title">Representatividade Importa: Construindo um Futuro Igualitário</h5>
+                            <p class="card-text">Descrição sobre evento...</p>
+                            <a href="#" class="btn btn-primary">Mais detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4"><!--evento 3-->
+                    <div class="card">
+                        <img src="../pag.Responsável/imgs/reciclagem.jpg" class="card-img-top" alt="Palestra sobre reciclagem">
+                        <div class="card-body">
+                            <h5 class="card-title">Reciclagem: Transformando Resíduos em Recursos</h5>
+                            <p class="card-text">Descrição sobre o evento...</p>
+                            <a href="#" class="btn btn-primary">Mais detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- campo calendário -->
+        <div id="calendario" class="mt-5">
+            <h3 class="mb-4">Calendário Acadêmico</h3>
+            <div class="card p-4 mb-4">
+                <div class="text-center">
+                    <p><strong>Data:</strong> <span id="data-calendario">2024-08-15</span></p>
+                    <p><strong>Evento:</strong> <span id="evento-calendario">Reunião de planejamento</span></p>
+                    <p><strong>Detalhes:</strong> <span id="detalhes-calendario">Reunião para discutir o planejamento do próximo semestre.</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enviar Documentos -->
+        <div id="upload" class="mt-5">
+            <h3 class="mb-4">Envio de Documentos</h3>
+            <div class="card p-4 mb-4">
+                <form>
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Histórico Escolar</label>
+                        <input type="file" class="form-control" id="foto" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="historico" class="form-label">Declaração e Atestado Médico</label>
+                        <input type="file" class="form-control" id="historico" accept=".pdf, .doc, .docx">
+                    </div>
+                    <div class="mb-3">
+                        <label for="outro-doc" class="form-label">Outros Documentos</label>
+                        <input type="file" class="form-control" id="outro-doc" accept=".pdf, .doc, .docx">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Documento</button>
+                </form>
+            </div>
+        </div>
+        <footer class="text-center py-3">
+            <p>&copy; 2024 Sistema de Gestão acadêmico <br>
+                Débora Souza
+            </p>
+        </footer>
+        <script>
+            function calcularNotas() {
+        const nota1 = parseFloat(document.getElementById('nota1-notas').innerText) || 0;
+        const nota2 = parseFloat(document.getElementById('nota2-notas').innerText) || 0;
+        const nota3 = parseFloat(document.getElementById('nota3-notas').innerText) || 0;
+        const nota4 = parseFloat(document.getElementById('nota4-notas').innerText) || 0;
+
+        const media = (nota1 + nota2 + nota3 + nota4) / 4;
+        const status = media >= 6 ? "Aprovado" : "Reprovado";
+
+        document.getElementById('media-notas').innerText = media.toFixed(2);
+        document.getElementById('status-notas').innerText = status;
+    }
+
+    function buscarFrequencia() {
+        alert("Frequência buscada com sucesso!");
+    }
+
+    document.querySelector('.btn-custom').addEventListener('click', buscarFrequencia);
+    </script>
+
+<body>
+</html>
+
+
+        

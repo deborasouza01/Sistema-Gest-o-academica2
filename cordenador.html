@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Coordenador - Gestão Acadêmica</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e6f1fa;
+        }
+        header {/*Topoo*/
+            background-color: #007bff;/*cor do topo*/
+            color: white;/*cor do texto do topo "area do coordenador*/
+            padding: 20px 0;
+            text-align: center;/*texto no centro*/
+        }
+        nav ul {/*espaço do topo "notas, frequencias, calendario, sugestoes"*/
+            list-style: none;/*remover marcadores de listas, tipo pontinhos, traços e etc...*/
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;/*deixar a lista com os itens um ao lado do outro ao invez de abaixo. sem quebra de linha(notas, frequencia, calendario. sugestões)*/
+            margin: 0 15px;/*margem superior e inferior 0. Margem direita e esquerda com 15px cada */
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;/*sem sublinhado*/
+            font-weight: bold;/*negrito*/
+        }
+        
+    
+        .card-custom {
+            margin-bottom: 20px;/*espaço entre um conteudo e outro*/
+        }
+        .form-select {
+            width: 125px;/*largura do botão de selecionar presença*/
+            margin: 0 auto;/*botao de alterar frequencia*/
+        }
+        .nomealuno-frequencia {
+            width: 40%;/*largura do campo nome de aluno*/
+            margin: 0 auto;/*centraliza espaço nome do aluno*/
+        }
+        #notasForm {
+            width: 30%;/*largura do campo de notas*/
+            margin: 0 auto;/*campo das notas no centro*/
+        }  
+</style>
+</head>
+<body>
+    <header><!--Campo do topo-->
+        <h1>Área do Coordenador</h1>
+        <nav>
+            <ul>
+                <li><a href="#notas">Notas</a></li>
+                <li><a href="#frequencia">Frequência</a></li>
+                <li><a href="#calendario">Calendário</a></li>
+                <li><a href="#ideias">Sugestões</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <!-- CAMPO DE FREQUENCI -->
+        <div class="text-center">
+            
+            <div class="nomealuno-frequencia">
+                <label for="aluno-frequencia" class="form-label">Nome do Aluno</label><!--NOME DO ALUNO P POR FREQUENCIA-->
+                    <input type="text" class="form-control" id="aluno-frequencia" name="aluno-frequencia" required>
+                </div>
+        <p>
+                <div class="mb-3">
+                    <form>
+                        <!-- Selecionar Série e turma-->
+                        <label for="serie">Selecione a Série:</label><!--SELECONAR SÉRIE-->
+                        <select id="serie" name="serie">
+                        
+                            <option value="1">1ª Ano</option>
+                            <option value="2">2ª Ano</option>
+                            <option value="3">3ª Ano</option>
+                            <option value="4">4ª Ano</option>
+                            <option value="5">5ª Ano</option>
+                            <option value="6">6ª Ano</option>
+                            <option value="7">7ª Ano</option>
+                            <option value="8">8ª Ano</option>
+                            <option value="9">9ª Ano</option>
+                        </select>
+                        <label for="turma">Selecione a Turma:</label><!--SELECIONAR TURMA-->
+        <select id="turma" name="turma">
+            <option value="A">Turma A</option>
+            <option value="B">Turma B</option>
+            <option value="C">Turma C</option>
+            <option value="D">Turma D</option>
+        </select>
+
+        <br><br>
+    </form>
+                 Turno: <!--ESCOLHER TURNO--> 
+                <label><input 
+                    type="radio" name="genero" value="Masculino">Manhã</label>
+                <label><input type="radio" name="genero" value="Feminino">Tarde</label>
+                
+                <br>
+                <br>
+                <input type="date"><!--ESCOLHER DATA DA FREQUENCIA-->
+
+                <select name="escolher-frequencia" id="escolherfrequencia"><!--ESCOLHER FREQUENCIA-->
+                    <option selected>Presente</option>
+                    <option value="1">Ausente</option>
+                    <option value="2">Justificado</option>
+                </select>
+                
+            </div>
+            <button class="btn btn-success">Salvar Frequência</button><!--botao verde-->
+            <button class="btn btn-warning">Alterar Frequência</button><!--botao amarelo-->
+        </div>
+        </p>
+
+        <!--CAMPO AGENDAR EVENTOS/DATAS -->
+        <div class="text-center mt-5">
+            <h3>Agendar Datas</h3>
+            <form>
+                <div class="mb-3"><!--CAMPO ESCREVER NOME DO EVENTO-->
+                    <input type="text" class="form-control" placeholder="Nome do evento"><!--campo para escrever o nome do evento-->
+                </div>
+                <div class="mb-3"><!--ESCOLHER DATAS DO EVENTO-->
+                    <input type="date" class="form-control" value="2024-08-09"><!--datas-->
+                </div>
+                <div class="mb-3"><!--campo para descrever detalhes do evento-->
+                    <textarea class="form-control" rows="3" placeholder="Escreva aqui detalhes do evento..."></textarea><!--espaço de escrever sobre o evento-->
+                </div>
+                <button class="btn btn-success">Agendar Evento</button><!--botao verde-->
+                <button class="btn btn-warning">Cancelar</button><!--botao amarelo-->
+            </form>
+        </div>
+
+        <!-- CAMPO ATIV RECENTES-->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h5>Atividades Recentes</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">Reunião de coordenadores - 05/08/2024</li>
+                    <li class="list-group-item">palestra sobre prevenção ao uso de drogas - 02/08/2024</li>
+                    <li class="list-group-item">Planejamento de aulas - 10/07/2024</li>
+                    <li class="list-group-item">Palestras sobre reciclagem - 15/07/2024</li>
+                </ul>
+            </div>
+            <!--CAMPO PROXIMOS EVENTOS-->
+            <div class="col-md-6">
+                <h5>Próximos Eventos</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">Oficina de didática - 20/08/2024</li>
+                    <li class="list-group-item">Semana acadêmica - 25/08/2024</li>
+                    <li class="list-group-item">Feira de consciência negra-20/09/2024</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CAMPO LANÇAR NOTAS -->
+        <div class="text-center mt-5">
+            <h3>Notas Bimestrais</h3>
+            <form id="notasForm">
+                <div class="mb-3">
+                    <h6>Disciplina</h6>
+                    <p>
+                    <select name="escolher-frequencia" id=""><!--ESCOLHER DISCIPLINA PARA DAR NOTAS-->
+                        <option selected>Português</option>
+                        <option value="1">Matemática</option>
+                        <option value="2">História</option>
+                        <option value="3">Geografia</option>
+                        <option value="4">Biologia</option>
+                        <option value="5">fisica</option>
+                        <option value="6">química</option>
+                        <option value="7">Lingua estrangeira</option>
+                    </select>
+                    </p>
+                  
+                    <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno"><!--nome do aluno para dar a nota-->
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="nota1" placeholder="1º Bimestre" min="0" max="10"><!--nota 1 Bimestre min de 0 até 10 caracteres-->
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="nota2" placeholder="2º Bimestre" min="0" max="10"><!--nota 2 Bimestre min de 0 até 10 caracteres-->
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="nota3" placeholder="3º Bimestre" min="0" max="10"><!--nota 3 Bimestre min de 0 até 10 caracteres-->
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="nota4" placeholder="4º Bimestre" min="0" max="10"><!--nota 4 Bimestre min de 0 até 10 caracteres-->
+                </div>
+                <button type="button" class="btn btn-success" onclick="calcularMedia()">Calcular Notas</button><!--botao calcular notas-->
+            </form>
+
+            <div class="mt-3">
+               <strong><p id="resultado"></p></strong><!--AQUI VAI APARECER A MEDIA CALCULADA-->
+            </div>
+
+        </div>
+
+        <!-- CAMPO DE EVENTO E DESCRIÇÕES(O PRIMEIRO) -->
+        <div class="row mt-5">
+            <div class="col-md-4 card-custom">
+                <div class="card">
+                    <img src="../pag.cordenador/imgs/droga.jpg" class="card-img-top" alt="Imagem Prevençao Drogas"> <!-- colocar imagem dps aqui-->
+                    <div class="card-body">
+                        <h5 class="card-title">Juventude Consciente:Prevenlçao ao uso de droga  .</h5><!--nome do evento 1-->
+                        <p class="card-text">essa palestra tem como objetivo principal conscientizar jovens sobre os riscos e consequências do uso de drogas, promovendo um estilo de vida saudável e escolhas responsáveis. Através de palestras educativas, atividades interativas e debates, buscamos criar um ambiente de diálogo aberto e informativo, onde os jovens possam aprender e discutir sobre a importância da prevenção ao uso de substâncias ilícitas e lícitas.</p><!--descrição sobre o evento-->
+                        <a href="#" class="btn btn-primary">Mais detalhes</a><!--botao mais detalhes-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 card-custom"><!--CAMPO EVENTO E DESCRIÇOES(O SEGUNDO)-->
+                <div class="card">
+                    <img src="../pag.cordenador/imgs/tecno.azul.jpg" class="card-img-top" alt="imagem Oficina de Tecnologia"> <!-- colocar imagem dps-->
+                    <div class="card-body">
+                        <h5 class="card-title">InovaTech: Oficina de Tecnologia.</h5><!--nome do evento 2-->
+                        <p class="card-text">essa é uma iniciativa inovadora que visa capacitar os participantes com conhecimentos práticos e teóricos sobre as mais recentes tecnologias e suas aplicações. Esta oficina é projetada para inspirar, educar e empoderar indivíduos a explorar e dominar ferramentas tecnológicas que estão moldando o futuro.</p><!--descriaçãp sobre-->
+                        <a href="#" class="btn btn-primary">Mais detalhes</a><!--botao mais detalhes-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 card-custom"><!--CAMPO EVENTO E DESCRIÇÕES(O TERCEIRO)-->
+                <div class="card">
+                    <img src="../pag.cordenador/imgs/corpo.humano.jpg" class="card-img-top" alt="Imagem Corpo Humano"> <!--imagem evento1 aqui dps-->
+                    <div class="card-body">
+                        <h5 class="card-title">Genética e Anatomia: Explorando os Segredos do Corpo Humano</h5><!--NOME-->
+                        <p class="card-text">Os mistérios do corpo humano, vamos explorar a complexidade da anatomia humana e as incríveis descobertas da genética que estão revolucionando a medicina moderna. Descubra como a biotecnologia está transformando nossa compreensão da saúde e abrindo novas fronteiras para tratamentos inovadores.</p><!--Descrição do evento-->
+                        <a href="#" class="btn btn-primary">Mais detalhes</a><!--botao mais detalhes evento 1-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+       
+        </button>
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Detalhes específicos sobre o evento ou atividade.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3"><!--rodapé-->
+        <p>&copy; 2024 Sistema de Gestão Acadêmica <br>
+            Débora Souza
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT PARA CALCULRA NOTAS -->
+    <script>
+        function calcularMedia() {
+            const nota1 = parseFloat(document.getElementById('nota1').value) || 0;
+            const nota2 = parseFloat(document.getElementById('nota2').value) || 0;
+            const nota3 = parseFloat(document.getElementById('nota3').value) || 0;
+            const nota4 = parseFloat(document.getElementById('nota4').value) || 0;
+
+            const media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+            let resultado = `A média do aluno é: ${media.toFixed(2)}. `;
+            resultado += media >= 5 ? "Status: APROVADO" : "Status: REPROVADO";
+
+            document.getElementById('resultado').innerText = resultado;
+        }
+
+       /*ALERT SALVAR FREQUENCIA*/ function salvarFrequencia() {
+        alert("Frequência salva com sucesso!");
+    }
+
+        /*ALERT ALTERAR FREQUENCIA*/ function alterarFrequencia() {
+        alert("Frequência alterada com sucesso!");
+    }
+
+           document.querySelector('.btn-success').addEventListener('click', salvarFrequencia);
+    
+           document.querySelector('.btn-warning').addEventListener('click', alterarFrequencia);
+    </script>
+</script>
+
+
+</body>
+</html>
